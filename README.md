@@ -1,4 +1,4 @@
-# test1
+# cypress-report-generator-windows
 
 ## Project setup
 ```

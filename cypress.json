@@ -1,3 +1,8 @@
 {
-  "pluginsFile": "tests/e2e/plugins/index.js"
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+    "configFile": "reporter-config.json"
+  },
+  "pluginsFile": "tests/e2e/plugins/index.js",
+  "video": false
 }
