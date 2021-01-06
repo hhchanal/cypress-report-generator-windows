@@ -17,8 +17,12 @@
 import './commands'
 import addContext from 'mochawesome/addContext'
 
+afterEach(() => {
+  cy.screenshot({ capture: 'runner' })
+})
+
 Cypress.on('test:after:run', (test, runnable) => {
-  if (test.state === 'failed') {
+/*  if (test.state === 'failed') {
     let item = runnable
     const nameParts = [runnable.title]
 
@@ -31,13 +35,13 @@ Cypress.on('test:after:run', (test, runnable) => {
     const fullTestName = nameParts
             .filter(Boolean)
             .join(' -- ')           // this is how cypress joins the test title fragments
-
+*/
     const imageUrl = `screenshots/${
       Cypress.spec.name
-    }/${fullTestName} (failed).png`
+    }/${runnable.title} -- after each hook.png`
 
     addContext({ test }, imageUrl)
-  }
+//  }
 })
 
 // Alternatively you can use CommonJS syntax:

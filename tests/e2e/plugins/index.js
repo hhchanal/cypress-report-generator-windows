@@ -9,11 +9,18 @@
 // /* eslint-disable import/no-extraneous-dependencies, global-require */
 // const webpack = require('@cypress/webpack-preprocessor')
 
+const fs = require('fs')
+
 module.exports = (on, config) => {
   // on('file:preprocessor', webpack({
   //  webpackOptions: require('@vue/cli-service/webpack.config'),
   //  watchOptions: {}
   // }))
+
+  // on('after:screenshot', (details) => {
+  //   console.log(details) // print all details to terminal
+  // })
+
 
   return Object.assign({}, config, {
     fixturesFolder: 'tests/e2e/fixtures',

@@ -4,5 +4,6 @@
     "configFile": "reporter-config.json"
   },
   "pluginsFile": "tests/e2e/plugins/index.js",
-  "video": false
+  "video": false,
+  "screenshotOnRunFailure": true
 }
