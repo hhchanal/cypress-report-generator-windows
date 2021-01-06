@@ -13,7 +13,7 @@ npm run test:e2e
 ### Run your end-to-end tests and generate html report with screenshots
 *Only failed tests contains screenshorts
 ```
-npm run test:e2e
+npm run report
 ```
 
 ### Customize configuration
