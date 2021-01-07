@@ -3,11 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
-    "test:e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint",
     "report": "run-s -c report:*",
     "report:clean": "Rmdir /Q /S tests\\e2e\\results\\",
     "report:cyrun": "cypress run",
@@ -16,30 +11,13 @@
     "report:copyScreenshots": "Xcopy tests\\e2e\\screenshots tests\\e2e\\results\\html_report\\screenshots /E /H /C /I /Y",
     "report:open": "Start %cd%\\tests\\e2e\\results\\html_report\\Test_Report.html"
   },
-  "dependencies": {
-    "core-js": "^3.6.5",
-    "debug": "^4.3.1",
-    "nvm": "0.0.4",
-    "vue": "^2.6.11"
-  },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-e2e-cypress": "^4.5.9",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-unit-mocha": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "@vue/test-utils": "^1.0.3",
-    "babel-eslint": "^10.1.0",
-    "chai": "^4.1.2",
     "cypress": "^6.2.1",
     "cypress-multi-reporters": "^1.4.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.2.2",
     "mocha": "~7",
     "mochawesome": "^6.2.1",
     "mochawesome-merge": "^4.2.0",
     "mochawesome-report-generator": "^5.1.0",
-    "npm-run-all": "^4.1.5",
-    "vue-template-compiler": "^2.6.11"
+    "npm-run-all": "^4.1.5"
   }
 }
