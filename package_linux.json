@@ -5,12 +5,11 @@
   "scripts": {
     "debug": "cypress open",
     "report": "run-s -c report:*",
-    "report:clean": "Rmdir /Q /S tests\\e2e\\results\\",
+    "report:clean": "rm -r tests/e2e/results/",
     "report:cyrun": "cypress run",
     "report:merge": "mochawesome-merge tests/e2e/results/json/*.json > tests/e2e/results/mochawesome-bundle.json",
     "report:generate": "marge tests/e2e/results/mochawesome-bundle.json -o tests/e2e/results/html_report -f Test_Report.html",
-    "report:copyScreenshots": "Xcopy tests\\e2e\\screenshots tests\\e2e\\results\\html_report\\screenshots /E /H /C /I /Y",
-    "report:open": "Start %cd%\\tests\\e2e\\results\\html_report\\Test_Report.html"
+    "report:copyScreenshots": "cp -R tests/e2e/screenshots tests/e2e/results/html_report/",
   },
   "devDependencies": {
     "@cucumber/cucumber": "^7.0.0",

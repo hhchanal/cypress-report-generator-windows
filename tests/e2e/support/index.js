@@ -16,32 +16,23 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 import addContext from 'mochawesome/addContext'
+import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps';
 
-afterEach(() => {
-  cy.screenshot({ capture: 'runner' })
+afterEach( function () {
+  cy.wait(3000)
+  cy.addScreenShot({ capture: 'fullPage' })
 })
 
-Cypress.on('test:after:run', (test, runnable) => {
-/*  if (test.state === 'failed') {
-    let item = runnable
-    const nameParts = [runnable.title]
-
-    // Iterate through all parents and grab the titles
-    while (item.parent) {
-      nameParts.unshift(item.parent.title)
-      item = item.parent
-    }
-
-    const fullTestName = nameParts
-            .filter(Boolean)
-            .join(' -- ')           // this is how cypress joins the test title fragments
-*/
+Cypress.Commands.add("addScreenShot", function (option) {
+  const currentDate = new Date();
+  const filename = currentDate.getTime().toString()
+  cy.screenshot(currentDate.getTime().toString(), option)
+  cy.once("test:after:run", (test, runnable) => {
     const imageUrl = `screenshots/${
       Cypress.spec.name
-    }/${runnable.title} -- after each hook.png`
-
+    }/${filename}.png`
     addContext({ test }, imageUrl)
-//  }
+  })
 })
 
 // Alternatively you can use CommonJS syntax:

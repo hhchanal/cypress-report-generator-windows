@@ -5,5 +5,7 @@
   },
   "pluginsFile": "tests/e2e/plugins/index.js",
   "video": false,
-  "screenshotOnRunFailure": true
+  "screenshotOnRunFailure": false,
+  "testFiles": "**/*.feature",
+  "ignoreTestFiles": ["*.js", "*.ts", "*.md"]
 }
